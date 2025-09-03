@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using UserManagement.Infrastructure.Data;
+
 namespace UserManagement.Api
 {
     public class Program
@@ -13,6 +16,17 @@ namespace UserManagement.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<AppDataContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
+
+            builder.Services.AddDbContext<AppDataContext>(options =>
+             options.UseSqlServer(
+                 builder.Configuration.GetConnectionString("DefaultConnection"),
+                 b => b.MigrationsAssembly("UserManagement.Infrastructure")
+             ));
 
             var app = builder.Build();
 

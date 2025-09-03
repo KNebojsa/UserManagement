@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
+using UserManagement.Domain.Interfaces;
 
 namespace UserManagement.Domain.Entities
 {
-    public class User
+    public class User : IDomainEntity
     {
         [Key]
         public Guid Id { get; set; }
@@ -31,21 +33,10 @@ namespace UserManagement.Domain.Entities
         [MinLength(2), MaxLength(10)]
         public string? Culture { get; set; }
 
-        public required IEnumerable<Client> Clients { get; set; }
-
-        public required DateTime DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
 
         public DateTime? DateModified { get; set; }
 
-
-        public User()
-        {
-            DateCreated = DateTime.UtcNow;
-        }
-
-        public void MarkModified()
-        {
-            DateModified = DateTime.UtcNow;
-        }
+        public required IEnumerable<Client> Clients { get; set; }
     }
 }

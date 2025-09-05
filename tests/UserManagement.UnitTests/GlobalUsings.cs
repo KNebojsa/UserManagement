@@ -1,0 +1,11 @@
+global using Xunit;
+global using FluentAssertions;
+global using Moq;
+global using System.Security.Authentication;
+global using UserManagement.Application.DTOs.Requests;
+global using UserManagement.Application.DTOs.Responses;
+global using UserManagement.Application.Exceptions;
+global using UserManagement.Application.Interfaces;
+global using UserManagement.Application.Services;
+global using UserManagement.Domain.Entities;
+global using UserManagement.Application.Attributes;

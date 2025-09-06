@@ -52,9 +52,6 @@ Open `appsettings.json` inside `UserManagement.Api` and set your SQL Server conf
   "DefaultConnection": "Server=.\\YOUR_SERVER_NAME;Database=UserManagementDb;Trusted_Connection=True;TrustServerCertificate=true;"
 }
 ```
-
-#### 🔧 Examples:
-
 > ⚠️ **Important:** Never commit real credentials or secrets to version control.
 
 ---
@@ -82,7 +79,7 @@ Use the following data for testing login/authentication:
 - **Test API Key:** `398dec7c-a80d-4428-b31e-4c0dafea9b4f`  
 - **Test User ID:** `F5436636-54DA-46DD-B869-31C1239508C6`
 
-#### 🔐 Test Credentials:
+#### 🔐 Test Credentials: 
 
 ```json
 {
@@ -90,7 +87,7 @@ Use the following data for testing login/authentication:
   "password": "Password123!"
 }
 ```
-
+> ⚠️ **Important:** Test data are included here solely for assignment purposes and would not typically be present in a README file in a professional setting.
 ---
 
 ### 6. Build and Run the Application
